@@ -18,6 +18,6 @@ mod tests {
 
         let result = hex_to_base64(input);
 
-        assert_eq!(result, expected_output, "Failed to parse hex to base 64");
+        assert_eq!(result, expected_output, "Wrong answer");
     }
 }

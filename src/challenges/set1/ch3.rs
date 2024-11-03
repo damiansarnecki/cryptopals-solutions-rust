@@ -28,7 +28,7 @@ pub fn find_best_decrypt_result(input : Vec<u8>) -> Vec<u8> {
     return best_message
 }
 
-fn estimate_english_text_score(input : &Vec<u8>) -> i32 {
+pub fn estimate_english_text_score(input : &Vec<u8>) -> i32 {
 
     let mut score : i32 = 0;
 
@@ -61,7 +61,7 @@ fn estimate_english_text_score(input : &Vec<u8>) -> i32 {
             _ => score -= 5 
         }
     }
-    
+
     score
 }
 
@@ -72,11 +72,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_set_challenge3() {
+    fn test_set1_challenge3() {
         let input_hex = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
 
         let best_message = find_best_decrypt_result(hex::decode(input_hex).unwrap());
 
-        assert_eq!(String::from_utf8(best_message).unwrap(), "Cooking MC's like a pound of bacon", "Failed to parse hex to base 64");
+        assert_eq!(String::from_utf8(best_message).unwrap(), "Cooking MC's like a pound of bacon", "Wrong answer");
     }
 }

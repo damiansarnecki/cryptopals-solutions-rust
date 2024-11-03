@@ -23,6 +23,6 @@ mod tests {
 
         let expected_output_hex = "746865206b696420646f6e277420706c6179";
 
-        assert_eq!(output_hex, expected_output_hex, "Failed to parse hex to base 64");
+        assert_eq!(output_hex, expected_output_hex, "Wrong answer");
     }
 }
